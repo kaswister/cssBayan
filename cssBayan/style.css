@@ -140,6 +140,6 @@ input[type='radio']:checked~label .accordion__img {
     }
 
   .plus-btn {
-    width: 2rem;
+    width: 1.8rem;
   }
 }
