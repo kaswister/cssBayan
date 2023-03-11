@@ -2,7 +2,7 @@
 @import url(./reset.css);
 
 :root {
-  --fz-desc: 2rem;
+  --fz-desc: 1.8rem;
   --fz-tablet: 1.5rem;
   --fz-standart: 1rem;
   --border-color: rgba(1, 1, 1, 0.5);
@@ -25,6 +25,7 @@ html {
   max-width: 90%;
   margin: 2vw auto;
 }
+
 .accordion__item {
   padding: 0.5rem;
   border-bottom: 0.05rem solid var(--border-color);
@@ -36,6 +37,7 @@ html {
   align-items: center;
   cursor: pointer;
   font-size: var(--fz-standart);
+  margin: 0.5vw 0;
 }
 
 .accordion__title {
@@ -66,7 +68,7 @@ input[type='radio']:checked~label .accordion__img {
   transform: rotate(45deg);
 }
 
-@media (hover: hover) {
+@media screen and (hover: hover) {
   .accordion__item:hover .plus-btn {
     transform: rotate(45deg);
   }
@@ -100,33 +102,19 @@ input[type='radio']:checked~label .accordion__img {
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 699px) {
+@media screen and (min-width: 321px){
   .accordion {
-    max-width: 75%;
+    max-width: 65%;
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 819px) {
+@media screen and (min-width: 820px) {
   .accordion {
-    max-width: 50%;
+    max-width: 55%;
   }
 
   .accordion__label {
     font-size: var(--fz-tablet);
-  }
-}
-
-@media screen and (min-width: 820px){
-  .accordion {
-    max-width: 40%;
-  }
-
-  .accordion__label {
-    font-size: var(--fz-tablet);
-  }
-
-  input[type='radio']:checked~label .accordion__img {
-  height: 20vw;
   }
 
   .plus-btn {
@@ -135,6 +123,10 @@ input[type='radio']:checked~label .accordion__img {
 }
 
 @media screen and (min-width: 1280px) {
+  .accordion {
+    max-width: 40%;
+  }
+
   .page__title {
     font-size: calc(var(--fz-desc) / 0.7);
   }
@@ -142,6 +134,10 @@ input[type='radio']:checked~label .accordion__img {
   .accordion__label {
     font-size: var(--fz-desc);
   }
+
+  input[type='radio']:checked~label .accordion__img {
+    height: 20vw;
+    }
 
   .plus-btn {
     width: 2rem;
