@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url(./reset.css);
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src:  url(./fonts/RobotoMono-VariableFont_wght.woff2) format("woff2"),
+        url(./fonts/RobotoMono-VariableFont_wght.woff) format("woff"),
+        url(./fonts/RobotoMono-VariableFont_wght.otf) format("otf"),
+        url(./fonts/RobotoMono-VariableFont_wght.ttf) format("ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
 
 :root {
   --fz-desc: 1.8rem;
