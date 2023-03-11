@@ -66,3 +66,21 @@ input[type='radio']:checked~label .accordion__img {
 .accordion__input:checked ~ label .plus-btn {
   transform: rotate(45deg);
 }
+
+
+@media screen and (min-width: 321px) and (max-width: 699px) {
+  .accordion {
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 819px) {
+  .accordion {
+    max-width: 50%;
+  }
+
+  .accordion__label {
+    font-size: var(--fz-tablet);
+  }
+
+}
