@@ -47,7 +47,7 @@ html {
 
 .plus-btn {
   display: block;
-  width: 1.5vw;
+  width: 1rem;
   transition: all 0.5s ease-in-out;
 }
 
@@ -57,17 +57,48 @@ html {
   transition: height 0.8s ease-in;
 }
 
-.accordion__item:hover .accordion__img,
 input[type='radio']:checked~label .accordion__img {
   height: 30vw;
   margin-top: 0.8rem;
 }
 
-.accordion__input:checked ~ label .plus-btn,
-.accordion__item:hover .plus-btn  {
+.accordion__input:checked ~ label .plus-btn {
   transform: rotate(45deg);
 }
 
+@media (hover: hover) {
+  .accordion__item:hover .plus-btn {
+    transform: rotate(45deg);
+  }
+
+  .accordion__item:hover .accordion__img {
+    height: 30vw;
+    margin-top: 0.8rem;
+  }
+
+  .accordion__label {
+    color:rgb(14, 14, 192);
+  }
+
+  .accordion:hover .accordion__title,
+  input[type='radio']:checked ~ label .accordion__title{
+    color: black;
+  }
+
+  .plus-btn {
+    display: none;
+  }
+
+  .accordion:hover .plus-btn {
+    display: block;
+  }
+
+  @media screen and (min-width: 820px){
+    .accordion__item:hover .accordion__img {
+    height: 20vw;
+    }
+  }
+}
 
 @media screen and (min-width: 321px) and (max-width: 699px) {
   .accordion {
@@ -89,9 +120,17 @@ input[type='radio']:checked~label .accordion__img {
   .accordion {
     max-width: 40%;
   }
-  .accordion__item:hover .accordion__img,
+
+  .accordion__label {
+    font-size: var(--fz-tablet);
+  }
+
   input[type='radio']:checked~label .accordion__img {
   height: 20vw;
+  }
+
+  .plus-btn {
+    width: 1.5rem;
   }
 }
 
@@ -102,19 +141,9 @@ input[type='radio']:checked~label .accordion__img {
 
   .accordion__label {
     font-size: var(--fz-desc);
-    color:rgb(14, 14, 192);
   }
 
   .plus-btn {
-    display: none;
-  }
-
-  .accordion:hover .accordion__title,
-  input[type='radio']:checked ~ label .accordion__title{
-    color: black;
-  }
-
-  .accordion:hover .plus-btn {
-    display: block;
+    width: 2rem;
   }
 }
