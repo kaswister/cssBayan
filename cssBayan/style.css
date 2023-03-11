@@ -29,28 +29,24 @@ html {
 .accordion__item {
   padding: 0.5rem;
   border-bottom: 0.05rem solid var(--border-color);
-}
-
-.accordion__label {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  font-size: var(--fz-standart);
   margin: 0.5vw 0;
 }
-
-.accordion__title {
+.accordion__label {
+  font-size: var(--fz-standart);
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .plus-btn {
-  display: block;
   width: 1rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .accordion__img {
@@ -59,7 +55,7 @@ html {
   transition: height 0.8s ease-in;
 }
 
-input[type='radio']:checked~label .accordion__img {
+input[type='radio']:checked ~ .accordion__img {
   height: 30vw;
   margin-top: 0.8rem;
 }
@@ -82,8 +78,8 @@ input[type='radio']:checked~label .accordion__img {
     color:rgb(14, 14, 192);
   }
 
-  .accordion:hover .accordion__title,
-  input[type='radio']:checked ~ label .accordion__title{
+  .accordion:hover .accordion__label,
+  input[type='radio']:checked ~ .accordion__label{
     color: black;
   }
 
@@ -96,13 +92,13 @@ input[type='radio']:checked~label .accordion__img {
   }
 
   @media screen and (min-width: 820px){
-    .accordion__item:hover .accordion__img {
+    .accordion__item:hover  .accordion__img {
     height: 20vw;
     }
   }
 }
 
-@media screen and (min-width: 321px){
+@media screen and (min-width: 320px){
   .accordion {
     max-width: 65%;
   }
@@ -135,11 +131,11 @@ input[type='radio']:checked~label .accordion__img {
     font-size: var(--fz-desc);
   }
 
-  input[type='radio']:checked~label .accordion__img {
-    height: 20vw;
-    }
-
   .plus-btn {
     width: 1.8rem;
   }
+
+  input[type='radio']:checked ~  .accordion__img {
+    height: 20vw;
+    }
 }
