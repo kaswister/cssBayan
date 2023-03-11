@@ -63,7 +63,8 @@ input[type='radio']:checked~label .accordion__img {
   margin-top: 0.8rem;
 }
 
-.accordion__input:checked ~ label .plus-btn {
+.accordion__input:checked ~ label .plus-btn,
+.accordion__item:hover .plus-btn  {
   transform: rotate(45deg);
 }
 
