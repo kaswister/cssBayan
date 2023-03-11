@@ -1,28 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url(./reset.css);
 
+:root {
+  --fz-desc: 2rem;
+  --fz-tablet: 1.5rem;
+  --fz-standart: 1rem;
+  --border-color: rgba(1, 1, 1, 0.5);
+}
+
+html {
+  width:100vw;
+  overflow-x:hidden;
+  font-family: 'Roboto Mono', monospace;
+} /* fixes screen twitching when the screen scrollbar appears  */
+
+.page__title {
+  font-size: var(--fz-tablet);
+  width: auto;
+  padding: 1vw 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .accordion {
-  max-width: 80%;
-  height: 100%;
-  margin: 5rem auto;
+  max-width: 90%;
+  margin: 2vw auto;
 }
 .accordion__item {
   padding: 0.5rem;
-  border-bottom: 0.05rem solid black;
+  border-bottom: 0.05rem solid var(--border-color);
 }
 
 .accordion__label {
-  width: 100%;
-  font-size: 4vw;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  color:rgb(14, 14, 192);
+  font-size: var(--fz-standart);
 }
 
 .accordion__title {
-  padding-bottom: 0.8rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -30,31 +46,23 @@
 }
 
 .plus-btn {
-  width: 4vw;
-  display: none;
+  display: block;
+  width: 1.5vw;
   transition: all 0.5s ease-in-out;
 }
 
 .accordion__img {
   width: auto;
   height: 0;
-  transition: height 0.5s ease-in-out;
+  transition: height 0.8s ease-in;
 }
 
 .accordion__item:hover .accordion__img,
 input[type='radio']:checked~label .accordion__img {
   height: 30vw;
-}
-
-.accordion:hover .accordion__title {
-  color: black;
-}
-
-.accordion:hover .plus-btn {
-  display: block;
+  margin-top: 0.8rem;
 }
 
 .accordion__input:checked ~ label .plus-btn {
   transform: rotate(45deg);
 }
-
