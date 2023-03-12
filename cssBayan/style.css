@@ -28,7 +28,7 @@ html {
   font-size: var(--fz-tablet);
   width: auto;
   padding: 1vw 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 0.1rem solid var(--border-color);
 }
 
 .accordion {
