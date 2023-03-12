@@ -41,33 +41,40 @@ html {
   border-bottom: 0.05rem solid var(--border-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
   cursor: pointer;
-  margin: 0.5vw 0;
 }
+
 .accordion__label {
   font-size: var(--fz-standart);
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.accordion__text {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  padding: 0.6rem 0;
 }
 
 .plus-btn {
+  background: url(./images/plus.svg) center/cover;
   width: 1rem;
-  transition: all 0.8s ease-in-out;
+  height: 1rem;
+  transition: transform 0.8s ease-in-out;
 }
 
 .accordion__img {
-  width: auto;
   height: 0;
-  transition: height 0.8s ease-in;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.8s ease-in-out;
 }
 
-input[type='radio']:checked ~ .accordion__img {
-  height: 30vw;
-  margin-top: 0.8rem;
+.accordion__input:checked ~ label .accordion__img {
+  height: 40vw;
 }
 
 .accordion__input:checked ~ label .plus-btn {
@@ -81,11 +88,15 @@ input[type='radio']:checked ~ .accordion__img {
 
   .accordion__item:hover .accordion__img {
     height: 30vw;
-    margin-top: 0.8rem;
   }
 
-  .accordion__label {
-    color:rgb(14, 14, 192);
+  .accordion__item:active .plus-btn {
+    background: url(./images/plus-blue.svg) center/cover;
+  }
+
+  .accordion__item:active .accordion__text,
+  .accordion__label  {
+    color: #0e0ec0;
   }
 
   .accordion:hover .accordion__label,
@@ -101,20 +112,20 @@ input[type='radio']:checked ~ .accordion__img {
     display: block;
   }
 
-  @media screen and (min-width: 820px){
-    .accordion__item:hover  .accordion__img {
+  @media screen and (min-width: 768px){
+    .accordion__item:hover .accordion__img {
     height: 20vw;
     }
   }
 }
 
-@media screen and (min-width: 320px){
+@media screen and (min-width: 375px){
   .accordion {
     max-width: 65%;
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 768px) {
   .accordion {
     max-width: 55%;
   }
@@ -124,7 +135,7 @@ input[type='radio']:checked ~ .accordion__img {
   }
 
   .plus-btn {
-    width: 1.5rem;
+    width: 1.8rem;
   }
 }
 
@@ -141,11 +152,7 @@ input[type='radio']:checked ~ .accordion__img {
     font-size: var(--fz-desc);
   }
 
-  .plus-btn {
-    width: 1.8rem;
-  }
-
-  input[type='radio']:checked ~  .accordion__img {
+  input[type='radio']:checked ~label .accordion__img {
     height: 20vw;
     }
 }
